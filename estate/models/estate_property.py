@@ -8,4 +8,5 @@ class EstateProperty(models.Model):
    selling_price = fields.Float('Preu de venda')
    bedrooms = fields.Integer('Habitacions')
    active = fields.Boolean(default=True)
+   state = fields.Selection([('New', 'Nou'), ('Offer Received', 'Oferta Rebuda'),('Offer Accepted', 'Oferta Acceptada'), ('Sold', 'Venuda'),('Canceled', 'Cancel·lada')],default='New',copy=False,required = True)   
 
