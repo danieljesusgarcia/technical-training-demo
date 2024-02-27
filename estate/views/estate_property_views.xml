@@ -39,6 +39,7 @@
             <form string="Propietat Immobiliària">
                 <header>
                     <button name="cancellarPropietat" type="object" string="Cancel·lar" />
+                    <button name="vendre_propietat" type="object" string="Vendre"/>
                 </header>
                 <sheet>
                     <group>

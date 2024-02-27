@@ -56,3 +56,12 @@ class EstateProperty(models.Model):
    def _unlink_if_property_new_or_canceled(self):
        if any(property.state not in ([ 'New', 'Canceled']) for property in self):
            raise UserError("No es pot eliminar una propietat que no és nova o cancel·lada")       
+
+   def vendre_propietat(self):
+        """ Estableix propietat com venuda """
+        for record in self:
+            if not record.state == 'Canceled':
+                record.state = 'Sold'
+            else:
+                raise UserError('No es pot vendre propietat cancel·lada')
+        return True
